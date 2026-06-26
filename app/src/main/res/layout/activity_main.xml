@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chinese Sentence Finder"
+        android:textColor="@color/text_primary"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/subtitleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Cari contoh kalimat Mandarin dari dataset lokal."
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp" />
+
+    <RadioGroup
+        android:id="@+id/scriptModeGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/simplifiedRadio"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="Simplified"
+            android:textColor="@color/text_primary" />
+
+        <RadioButton
+            android:id="@+id/traditionalRadio"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Traditional"
+            android:textColor="@color/text_primary" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/searchInput"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/accent"
+            android:hint="Masukkan kosakata"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary" />
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="104dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/accent"
+            android:text="Cari"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Memuat dataset..."
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp" />
+
+    <ListView
+        android:id="@+id/resultsList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_weight="1"
+        android:background="@color/panel_background"
+        android:clipToPadding="false"
+        android:divider="@color/border"
+        android:dividerHeight="1dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp" />
+
+    <Button
+        android:id="@+id/loadMoreButton"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/accent"
+        android:text="Tampilkan lebih banyak"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+</LinearLayout>

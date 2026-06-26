@@ -81,7 +81,7 @@ def search_vocab(keyword, dataset):
     return results
 
 def main():
-    nama_file_csv = "sentence.csv" 
+    nama_file_csv = "data/sentence.csv" 
     
     # 1. Load Data Mentah
     data_sentences = load_dataset(nama_file_csv)
@@ -121,8 +121,6 @@ def main():
         if not keyword_raw:
             continue
 
-        # --- PERBAIKAN UTAMA DISINI ---
-        # Input user dikonversi juga menggunakan converter yang sama dengan dataset
         keyword_search = active_converter.convert(keyword_raw)
         
         # Tampilkan feedback ke user apa yang sebenarnya dicari oleh sistem
