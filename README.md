@@ -2,10 +2,9 @@
 
 Simple Chinese Sentence Finder sekarang berisi:
 
-- Program CLI Python lama di `src/main.py`.
+- Program CLI Python awal di `src/main.py`.
 - Project Android native offline di folder `app/`.
 - Dataset Android di `app/src/main/assets/sentence.csv`.
-- Rencana migrasi di `docs/android-app-plan.md`.
 
 ## Android App
 
@@ -15,10 +14,21 @@ Fitur Android v1:
 
 - Pencarian contoh kalimat Mandarin dari dataset lokal.
 - Mode Simplified dan Traditional.
+- Mode search Hanzi, fuzzy Pinyin, dan Definisi/English.
+- Highlight bagian hasil yang cocok dengan pencarian.
 - Transliteration pinyin memakai ICU bawaan Android.
-- Hasil maksimal 10 kalimat.
 - Tampilan Hanzi, pinyin, dan terjemahan Inggris.
-- Bisa berjalan tanpa internet setelah APK terpasang.
+
+## Struktur Kode Android
+
+Kode Android dipisah seperti aplikasi kamus digital kecil:
+
+- `data/`: load dataset CSV dari assets.
+- `model/`: model kalimat dan hasil pencarian.
+- `search/`: search mode, cursor session, inverted index Hanzi, KMP definition search, dan fuzzy pinyin.
+- `text/`: konversi Simplified/Traditional, pinyin, dan normalisasi teks.
+- `ui/`: adapter list hasil dan highlight match.
+- `MainActivity`: orchestration UI, reload dataset, dan pagination.
 
 
 ## Cara Menjalankan di Android Studio
